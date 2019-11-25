@@ -1,0 +1,109 @@
+            <div style=" width: 1158px; height: 30px">
+                <div>
+                    <span id=ctl00_lbltitle class=title>ユーザー一覧</span>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div style="TEXT-ALIGN: left; width: 1158px">
+                <div class=tbTitile>
+                    <span id=ctl00_mainContent_SearchText class=inputlbl>検索条件</span>
+                </div>
+                <div class=tbContent>
+                    <table style="width: 100%" cellSpacing=0 cellPadding=0>
+                        <tbody>
+                            <tr>
+                                <td style="width: 170px">
+                                    <span id=ctl00_mainContent_lblUserCode class=inputlbl>ユーザーID</span><br>
+                                    <input id=ctl00_mainContent_txtUserCode class=inputText name="userId" maxLength=10 value="">
+                                </td>
+                                <td style="width: 170px"><span id=ctl00_mainContent_lblUserName class=inputlbl>ユーザー名</span><br>
+                                    <input id=ctl00_mainContent_txtUserName class=inputText name="userName" maxLength=20 value="">
+                                </td>
+                                <td style="width: 170px">
+                                    <span id=ctl00_mainContent_lblAcessGrp class=inputlbl>権限</span><br>
+                                    <select id=ctl00_mainContent_ddlAcessGrp class=ddlBlack name="userRoot" id="userRoot">
+                                        
+                                    </select>
+                                    <input type="hidden" value="" id="root"/>
+                                </td>
+                                <td><br>
+                                <span style="width: 133px; DISPLAY: inline-block" class=chkBox>
+                                    
+                                    <label for=ctl00_mainContent_chkVisible>削除フラグ含む</label>
+                                    <input id=delFlagHidden name=delFlag type=hidden value=""/>
+                                </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="TEXT-ALIGN: right; width: 100%" class=btnContent>
+                    <a href="javascript:void(0)" class="btn" (click)="search()">検索</a>
+                    <a href="javascript:void(0)" class="btn">追加</a>
+                </div>
+                <div style="height: 340px" class=gvContent>
+                    <div>
+                        <!-- <table style="width: 100%; BORDER-COLLAPSE: collapse" id=ctl00_mainContent_gvList rules=all cellSpacing=0 cellPadding=0>
+                            <tbody>
+                                <tr class=gvHeader>
+                                    <th style="width: 8%" scope=col>操作</th>
+                                    <th style="width: 8%" scope=col>
+                                        <A href="javascript:__doPostBack('ctl00$mainContent$gvList','Sort$ユーザID')">ユーザID</A>
+                                    </th>
+                                    <th style="width: 8%" scope=col>
+                                        <A href="javascript:__doPostBack('ctl00$mainContent$gvList','Sort$ユーザー名')">ユーザー名</A>
+                                    </th>
+                                    <th style="width: 8%" scope=col>
+                                        <A href="javascript:__doPostBack('ctl00$mainContent$gvList','Sort$権限')">権限</A>
+                                    </th>
+                                    <th style="width: 8%" scope=col>
+                                        <A href="javascript:__doPostBack('ctl00$mainContent$gvList','Sort$削除状態')">削除フラグ</A>
+                                    </th>
+                                    <th style="width: 14%" scope=col>
+                                        <A href="javascript:__doPostBack('ctl00$mainContent$gvList','Sort$電話番号')">電話番号</A>
+                                    </th>
+                                    <th style="width: 14%" scope=col>
+                                        <A href="javascript:__doPostBack('ctl00$mainContent$gvList','Sort$メールアドレス')">メールアドレス</A>
+                                    </th>
+                                    <th style="width: 8%" scope=col><A
+                                        href="javascript:__doPostBack('ctl00$mainContent$gvList','Sort$作成者')">作成者</A></th>
+                                    <th style="width: 8%" scope=col>
+                                        <A href="javascript:__doPostBack('ctl00$mainContent$gvList','Sort$作成日')">作成日</A>
+                                    </th>
+                                    <th style="width: 8%" scope=col>
+                                        <A href="javascript:__doPostBack('ctl00$mainContent$gvList','Sort$更新者')">更新者</A>
+                                    </th>
+                                    <th style="width: 8%" scope=col>
+                                        <A href="javascript:__doPostBack('ctl00$mainContent$gvList','Sort$更新日')">更新日</A>
+                                    </th>
+                                </tr>
+                                   <tr class=gvRow>
+                                        <td style="width: 8%">
+                                            <label>編集</label>
+                                            <label>削除</label>
+                                        </td>
+                                       <td style="width: 8%">
+                                            <a href="javascript:void(0)" style="TEXT-DECORATION: underline" id=ctl00_mainContent_gvList_ctl02_lnkUserID onClick="eventSwitch('UserDetail', '${userInfo.userId}')">${userInfo.userId}</A>
+                                       </td>
+                                       <td style="width: 8%">${userInfo.userName}</td>
+                                       <td style="width: 8%">${userInfo.authorityCd}</td>
+                                       <td style="width: 8%">
+                                           <span title=削除フラグ >
+                                                <input id=delFlag name=delFlag type=checkbox value="${userInfo.delFlg}" disabled="disabled">
+                                           </span>
+                                      </td>
+                                       <td style="width: 14%"> ${userInfo.telNumber}</td>
+                                       <td style="width: 14%"> ${userInfo.mailAddress}</td>
+                                       <td style="width: 8%"> ${userInfo.createUser}</td>
+                                       <td style="width: 8%"> ${userInfo.createDate}</td>
+                                       <td style="width: 8%"> ${userInfo.updateUser}</td>
+                                       <td> ${userInfo.updateDate}</td>
+                                   </tr>
+                            </tbody>
+                        </table> -->
+                    </div>
+                </div>
+                <!-- 画面遷移用ユーザーID -->
+                <input id="updateUserId" name="updateUserId"  type=hidden />
+            </div>
