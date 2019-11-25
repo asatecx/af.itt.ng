@@ -1,5 +1,5 @@
 import { LazyLoadEvent } from 'primeng/primeng';
-import { AppHttp, Messages } from '../../app.service';
+import { AppHttp } from '../../app.service';
 
 export class DataTableMate {
 
