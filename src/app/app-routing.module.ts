@@ -1,16 +1,34 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import {LoginComponent} from './itt/login/login.component';
 
 export const appRoutes = [
+  // {
+  //   path: 'main',
+  //   loadChildren: () => import('./itt/main.module')
+  //     .then(m => m.PagesModule),
+  // },
   {
     path: '',
-    loadChildren: './itt/user-search/user-search.module#UserSearchModule'
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'main',
+    loadChildren: './itt/main.module#WorkspaceModule'
   },
   {
     path: 'login',
-    loadChildren: './itt/sample/sample.module#SampleModule'
-  }
+    component: LoginComponent
+  },
+  {
+    path: 'user',
+    loadChildren: './itt/user-search/user-search.module#UserSearchModule'
+  },
+  // {
+  //   path: 'login',
+  //   loadChildren: './itt/sample/sample.module#SampleModule'
+  // }
 ];
 
 // @NgModule({

@@ -1,0 +1,109 @@
+
+.background {
+  width: 100%;
+  min-width: 1320px;
+  height: 100%;
+  background-color: #289973;
+  position: relative;
+}
+
+.login-container {
+  width: 1280px;
+  height: 720px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -360px;
+  margin-left: -640px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.title-box {
+  float: left;
+  width: 548px;
+  height: 100%;
+  background: #ebebeb url("../../../assets/image/titlebg.png") 50px 55px no-repeat;
+  text-align: center;
+  line-height: 650px;
+  font-size: 34px;
+  color: #20a0ff;
+}
+
+.login-box {
+  float: left;
+  width: 420px;
+  margin-top: 110px;
+  margin-left: 155px;
+}
+
+.logo {
+  width: 100%;
+  height: 150px;
+  text-align: center;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.login-body {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.login-body input {
+  width: 100%;
+  padding: 18px 5px 18px 70px;
+  font-size: 16px;
+}
+
+.login-body .ui-g-12 {
+  position: relative;
+  padding: 0;
+}
+
+.login-body .ui-g-12 .fa-user {
+  position: absolute;
+  top: 16px;
+  left: 21px;
+  font-size: 24px;
+}
+
+.login-body .ui-g-12 .fa-unlock-alt {
+  position: absolute;
+  top: 16px;
+  left: 21px;
+  font-size: 24px;
+}
+
+.login-btn {
+  width: 100%;
+  display: inline-block;
+  white-space: nowrap;
+  cursor: pointer;
+  margin: 0;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 24px;
+  box-sizing: border-box;
+  outline: 0;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  background-color: #20a0ff;
+  border-color: #20a0ff;
+  -webkit-appearance: none;
+  text-transform: none;
+  overflow: visible;
+}
+
+.login-btn:hover, .login-btn:active, .login-btn:focus {
+  background: #4db3ff;
+  border-color: #4db3ff;
+  color: #fff;
+}
+
