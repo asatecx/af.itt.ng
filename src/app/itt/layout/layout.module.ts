@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {WorkspaceComponent} from './main.component';
-import {workspaceRoutes} from './main.routes';
+import {WorkspaceComponent} from './layout.component';
+import {workspaceRoutes} from './layout.routes';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SharedModule, AccordionModule, GrowlModule, TooltipModule} from 'primeng/primeng';
 // import {MyGoTopModule} from '../itt/components/my-gotop/my-gotop';
-import {WorkspaceService} from './main.service';
+import {WorkspaceService} from './layout.service';
 
 
 @NgModule({

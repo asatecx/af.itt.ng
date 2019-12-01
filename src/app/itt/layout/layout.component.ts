@@ -2,13 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 // import {beforeUrl} from '../itt/common/public-data';
 import {trigger, state, style, animate, transition} from '@angular/animations';
-import {WorkspaceService} from './main.service';
+import {WorkspaceService} from './layout.service';
 
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css'],
+  selector: 'app-layout',
+  templateUrl: './layout.component.html',
+  styleUrls: ['./layout.component.css'],
   animations: [
     trigger('menuState', [
       state('inactive', style({

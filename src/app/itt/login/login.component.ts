@@ -34,8 +34,8 @@ export class LoginComponent implements OnInit {
           this.btnLogin = '登 录 中 ...';
           sessionStorage.setItem('userToken', this.userToken);
           console.log(res);
-          // if (res.name === this.nameModel) {
-          if (1 === 1) {
+          let resBody = JSON.parse(res._body);
+          if (resBody.name === this.nameModel && resBody.password === this.psModel) {
             this.router.navigateByUrl('main');
           } else {
             this.loginerrortext = '您输入的账号密码有误';

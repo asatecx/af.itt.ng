@@ -1,4 +1,4 @@
-import {WorkspaceComponent} from './main.component';
+import {WorkspaceComponent} from './layout.component';
 
 export const workspaceRoutes = [
   {
@@ -10,7 +10,7 @@ export const workspaceRoutes = [
       // },
       {
         path: 'user-search',
-        loadChildren: '../itt/user-search/user-search.module#UserSearchModule',
+        loadChildren: '../../itt/user-search/user-search.module#UserSearchModule',
         title: 'ユーザ検索'
       },
       {
