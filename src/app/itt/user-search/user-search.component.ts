@@ -27,11 +27,10 @@ export class UserSearchComponent implements OnInit {
     private http: AppHttp
     ) {
       this.authority = [
-        {name: 'New York', code: 'NY'},
-        {name: 'Rome', code: 'RM'},
-        {name: 'London', code: 'LDN'},
-        {name: 'Istanbul', code: 'IST'},
-        {name: 'Paris', code: 'PRS'}
+        {name: 'システム管理者', code: '0'},
+        {name: '部長', code: '1'},
+        {name: '事務担当者', code: '2'},
+        {name: '販売担当者', code: '3'}
     ];
     }
 

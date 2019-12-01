@@ -15,7 +15,7 @@ export const appRoutes = [
   },
   {
     path: 'main',
-    loadChildren: './itt/layout/layout.module#WorkspaceModule'
+    loadChildren: './itt/layout/layout.module#LayoutModule'
   },
   {
     path: 'login',

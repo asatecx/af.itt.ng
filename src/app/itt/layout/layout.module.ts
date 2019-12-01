@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {WorkspaceComponent} from './layout.component';
-import {workspaceRoutes} from './layout.routes';
+import {LayoutComponent} from './layout.component';
+import {layoutRoutes} from './layout.routes';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SharedModule, AccordionModule, GrowlModule, TooltipModule} from 'primeng/primeng';
 // import {MyGoTopModule} from '../itt/components/my-gotop/my-gotop';
-import {WorkspaceService} from './layout.service';
+import {LayoutService} from './layout.service';
 
 
 @NgModule({
@@ -14,7 +14,7 @@ import {WorkspaceService} from './layout.service';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    RouterModule.forChild(workspaceRoutes),
+    RouterModule.forChild(layoutRoutes),
     SharedModule,        //  peimrNG 手风琴
     AccordionModule,     //  peimrNG 手风琴
     GrowlModule,         //  peimrNG msg提示
@@ -23,12 +23,12 @@ import {WorkspaceService} from './layout.service';
   ],
   exports: [],
   declarations: [
-    WorkspaceComponent,
+    LayoutComponent,
   ],
   providers: [
-    WorkspaceService,
+    LayoutService,
 
   ],
 })
-export class WorkspaceModule {
+export class LayoutModule {
 }

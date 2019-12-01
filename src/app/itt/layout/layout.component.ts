@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 // import {beforeUrl} from '../itt/common/public-data';
 import {trigger, state, style, animate, transition} from '@angular/animations';
-import {WorkspaceService} from './layout.service';
+import {LayoutService} from './layout.service';
 
 
 @Component({
@@ -42,9 +42,9 @@ import {WorkspaceService} from './layout.service';
     ])
   ]
 })
-export class WorkspaceComponent implements OnInit {
+export class LayoutComponent implements OnInit {
 
-  constructor(private myService: WorkspaceService, public router: Router) {
+  constructor(private myService: LayoutService, public router: Router) {
   };
 
   ngOnInit() {
@@ -75,7 +75,9 @@ export class WorkspaceComponent implements OnInit {
     } else {
       this.myService.getMenu()
         .then(
-          menus => this.menus = menus,
+          res => {
+            // let resBody = JSON.parse(menus);
+            this.menus = JSON.parse(res._body)},
           error => {
             this.menumsg = '获取菜单失败,请刷新再试';
           }
@@ -86,46 +88,46 @@ export class WorkspaceComponent implements OnInit {
           }
         });
     }
-    this.menus = [
-      {
-        "name": "ユーザ管理",
-        "icon": "fa-database",
-        "children": [
-          {
-            "name": "ユーザ検索",
-            "link": "user-search"
-          },
-          {
-            "name": "ユーザ追加",
-            "link": "user-add"
-          },
-        ]
-      },
-      {
-        "name": "契約管理",
-        "icon": "fa-line-chart",
-        "children": [
-          {
-            "name": "契約検索",
-            "link": "contract-search"
-          }
-        ]
-      },
-      {
-        "name": "システム設定",
-        "icon": "fa-tree",
-        "children": [
-          {
-            "name": "権限設定",
-            "link": "authority-setting"
-          },
-          {
-            "name": "パスワード変更",
-            "link": "changepassword"
-          }
-        ]
-      },
-    ];
+    // this.menus = [
+    //   {
+    //     "name": "ユーザ管理",
+    //     "icon": "fa-database",
+    //     "children": [
+    //       {
+    //         "name": "ユーザ検索",
+    //         "link": "user-search"
+    //       },
+    //       {
+    //         "name": "ユーザ追加",
+    //         "link": "user-add"
+    //       },
+    //     ]
+    //   },
+    //   {
+    //     "name": "契約管理",
+    //     "icon": "fa-line-chart",
+    //     "children": [
+    //       {
+    //         "name": "契約検索",
+    //         "link": "contract-search"
+    //       }
+    //     ]
+    //   },
+    //   {
+    //     "name": "システム設定",
+    //     "icon": "fa-tree",
+    //     "children": [
+    //       {
+    //         "name": "権限設定",
+    //         "link": "authority-setting"
+    //       },
+    //       {
+    //         "name": "パスワード変更",
+    //         "link": "changepassword"
+    //       }
+    //     ]
+    //   },
+    // ];
   }
 
   /************************* 改变左侧菜单宽度 ********************************/

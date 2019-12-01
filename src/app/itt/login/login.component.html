@@ -1,11 +1,11 @@
 <div class="background">
   <div class="login-container">
     <div class="title-box">
-      管理后台
+      契約管理システム
     </div>
     <div class="login-box">
       <div class="logo">
-        <img src="../../../assets/image/favicon.ico">
+        <img src="../../../assets/image/ASATECX_e-learn.png" style="width: 420px;height: 100px;">
       </div>
       <form #formAdd="ngForm" novalidate role="form" (ngSubmit)="formAdd.form.valid && login()">
 
@@ -14,7 +14,7 @@
             <div class="ui-g-12">
               <span class="fa fa-user"></span>
               <input type="text" pInputText
-                     placeholder="默认用户:binbinadmin"
+                     placeholder="ユーザID"
                      [(ngModel)]="nameModel"
                      name="nameMode"
                      required
@@ -25,14 +25,14 @@
           </div>
           <div class="ui-g error-input-msg">
             <div class="ui-g-12" *ngIf="formAdd.submitted && !nameMode.valid">
-              <i class="fa fa-times-circle mr5"></i>请输入账户
+              <i class="fa fa-times-circle mr5"></i>ユーザIDは必須です。
             </div>
           </div>
           <div class="ui-g">
             <div class="ui-g-12">
               <span class="fa fa-unlock-alt "></span>
               <input type="password" pInputText
-                     placeholder="请输入密码"
+                     placeholder="パスワード"
                      [(ngModel)]="psModel"
                      name="psMode"
                      required
@@ -42,7 +42,7 @@
           </div>
           <div class="ui-g error-input-msg">
             <div class="ui-g-12" *ngIf="formAdd.submitted && !psMode.valid">
-              <i class="fa fa-times-circle mr5"></i>请输入密码
+              <i class="fa fa-times-circle mr5"></i>パスワードは必須です。
             </div>
           </div>
           <div class="ui-g error-input-msg">

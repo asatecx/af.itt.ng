@@ -4,60 +4,72 @@
   </div>
   <div>
     <p-panel header="検索条件" [toggleable]="true">
-        <div class="row">
-          <div class="input">
-            <span class="ui-float-label">
-              <input id="float-input" type="text" size="30" pInputText>
-              <label for="float-input">ユーザID</label>
-            </span>
-          </div>
-          <div class="input">
-            <span class="ui-float-label">
-              <input id="float-input" type="text" size="30" pInputText>
-              <label for="float-input">ユーザー名</label>
-            </span>
-          </div>
-          <div class="input">
-            <p-dropdown name="noticeTypes" [options]="authority" [(ngModel)]="selectedCity2" optionLabel="name">
-            </p-dropdown>
-          </div>
-          <div class="input">
-            <p-checkbox [(ngModel)]="value" binary="true"></p-checkbox>
-            <label>削除データ含む</label>
-          </div>
-          <div style="TEXT-ALIGN: right; width: 95%" class="input">
-            <button pButton type="button" label="検索" (click)="search()"></button>
-          </div>
+      <div class="row">
+        <div class="input">
+          <span class="ui-float-label">
+            <input id="float-input" type="text" size="30" pInputText>
+            <label for="float-input">ユーザID</label>
+          </span>
         </div>
+        <div class="input">
+          <span class="ui-float-label">
+            <input id="float-input" type="text" size="30" pInputText>
+            <label for="float-input">ユーザー名</label>
+          </span>
+        </div>
+        <div class="input">
+          <p-dropdown name="noticeTypes" [options]="authority" [(ngModel)]="selectedCity2" optionLabel="name">
+          </p-dropdown>
+        </div>
+        <div class="input">
+          <p-checkbox [(ngModel)]="value" binary="true"></p-checkbox>
+          <label>削除データ含む</label>
+        </div>
+        <div style="TEXT-ALIGN: right; width: 95%" class="input">
+          <button pButton type="button" label="検索" (click)="search()"></button>
+        </div>
+      </div>
     </p-panel>
 
-    
+
     <div style="margin-top:20px" class=gvContent>
       <p-table #dt [value]="dataTableMate.ResultData" [(first)]="dataTableMate.first" [columns]="cols" [rowHover]="true"
         [responsive]="true" [autoLayout]="true" selectionMode="single" [(selection)]="selected" [paginator]="true"
         [pageLinks]="5" [rowsPerPageOptions]="[10,20,50,100]" [rows]="10" [totalRecords]="dataTableMate.totalRecords">
         <ng-template pTemplate="header">
           <tr [ngClass]="text-center">
-            <th [ngStyle]="{'width': '4%'}">
-              header1
-            </th>
-            <th [ngStyle]="{'width': '30%'}">
-              header1
-            </th>
             <th [ngStyle]="{'width': '5%'}">
-              header1
+              操作
             </th>
-            <th [ngStyle]="{'width': '5%'}">
-              header1
+            <th [ngStyle]="{'width': '8%'}">
+              ユーザID
+            </th>
+            <th [ngStyle]="{'width': '10%'}">
+              ユーザー名
             </th>
             <th [ngStyle]="{'width': '6%'}">
-              header1
+              権限
             </th>
             <th [ngStyle]="{'width': '6%'}">
-              header1
+              ステータス
+            </th>
+            <th [ngStyle]="{'width': '8%'}">
+              電話番号
+            </th>
+            <th [ngStyle]="{'width': '8%'}">
+              メールアドレス
             </th>
             <th [ngStyle]="{'width': '5%'}">
-              header1
+              作成者
+            </th>
+            <th [ngStyle]="{'width': '8%'}">
+              作成日
+            </th>
+            <th [ngStyle]="{'width': '5%'}">
+              更新者
+            </th>
+            <th [ngStyle]="{'width': '8%'}">
+              更新日
             </th>
           </tr>
         </ng-template>
@@ -65,7 +77,19 @@
         <ng-template pTemplate="body" let-rowData let-columns="columns" let-rowIndex="rowIndex" let-index="rowIndex">
           <tr [pReorderableRow]="index" tr [pSelectableRow]="rowData">
             <td [ngStyle]="{'text-align':'center'}">
+              編集
+            </td>
+            <td [ngStyle]="{'text-align':'left'}">
+              {{rowData.userId}}
+            </td>
+            <td [ngStyle]="{'text-align':'center'}">
               {{rowData.userName}}
+            </td>
+            <td>
+              {{rowData.authorityCd}}
+            </td>
+            <td>
+              {{rowData.delFlg}}
             </td>
             <td>
               {{rowData.telNumber}}
@@ -74,18 +98,16 @@
               {{rowData.mailAddress}}
             </td>
             <td>
-              {{rowData.authorityCd}}
+              {{rowData.createUser}}
             </td>
             <td>
-              {{rowData.memo}}
+              {{rowData.createDate}}
             </td>
             <td>
-              {{rowData.delFlg}}
+              {{rowData.updateUser}}
             </td>
             <td>
-              <i class="fa fa-bars" pReorderableRowHandle></i>
-              <i class="fa fa-caret-up fa-1.5x" style="padding-left: 10px;"></i>
-              <i class="fa fa-caret-down fa-1.5x" style="padding-left: 10px;"></i>
+              {{rowData.updateDate}}
             </td>
           </tr>
         </ng-template>

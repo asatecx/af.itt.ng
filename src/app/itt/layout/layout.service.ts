@@ -6,16 +6,22 @@ import {Http} from '@angular/http';
 
 
 @Injectable()
-export class WorkspaceService {
+export class LayoutService {
   constructor(private http: Http) {
   }
 
   //获取菜单
   private menuUrl = 'assets/data/user-menu.json';
 
-  getMenu(): Promise<any[]> {
+  getMenu(): Promise<any> {
     let url = `${this.menuUrl}`;
-    return this.http.get(url).toPromise()
+    let httpOptions: any;
+    httpOptions = {
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.get(url, httpOptions).toPromise()
       .then(res => {
         return res;
       }).catch(res=>res);

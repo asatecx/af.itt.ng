@@ -1,16 +1,16 @@
-import {WorkspaceComponent} from './layout.component';
+import {LayoutComponent} from './layout.component';
 
-export const workspaceRoutes = [
+export const layoutRoutes = [
   {
     path: '',
-    component: WorkspaceComponent,
+    component: LayoutComponent,
     children: [
       // {
       //   path: '', redirectTo: 'user', pathMatch: 'full'
       // },
       {
         path: 'user-search',
-        loadChildren: '../../itt/user-search/user-search.module#UserSearchModule',
+        loadChildren: '../user-search/user-search.module#UserSearchModule',
         title: 'ユーザ検索'
       },
       {
