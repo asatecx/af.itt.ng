@@ -21,14 +21,6 @@ export const appRoutes = [
     path: 'login',
     component: LoginComponent
   },
-  {
-    path: 'user',
-    loadChildren: './itt/user-search/user-search.module#UserSearchModule'
-  },
-  // {
-  //   path: 'login',
-  //   loadChildren: './itt/sample/sample.module#SampleModule'
-  // }
 ];
 
 // @NgModule({

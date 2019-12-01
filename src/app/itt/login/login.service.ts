@@ -4,7 +4,7 @@
 import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
-import {beforeUrl} from '../common/public-data';
+// import {beforeUrl} from '../common/public-data';
 import {Http, Headers} from '@angular/http';
 import {catchError, tap} from 'rxjs/operators';
 import { Observable , of} from 'rxjs';

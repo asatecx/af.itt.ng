@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {beforeUrl} from '../itt/common/public-data';
+// import {beforeUrl} from '../itt/common/public-data';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 import {WorkspaceService} from './main.service';
 
@@ -61,7 +61,7 @@ export class WorkspaceComponent implements OnInit {
   menus: any[];                                    //菜单
   state: string = 'inactive';                      //菜单状态
   pTooltipIf: boolean = false;                     //pTooltipIf状态
-  beforeUrl: string = beforeUrl;                   //api前缀地址
+  // beforeUrl: string = beforeUrl;                   //api前缀地址
   timeout: any;                                    //错误信息时间
   realname: string;                                  //头部账号名字
   menumsg: string;
@@ -88,65 +88,43 @@ export class WorkspaceComponent implements OnInit {
     }
     this.menus = [
       {
-        "name": "数据管理",
+        "name": "ユーザ管理",
         "icon": "fa-database",
         "children": [
           {
-            "name": "data-table",
-            "link": "data-table"
+            "name": "ユーザ検索",
+            "link": "user-search"
           },
           {
-            "name": "primeng验证",
-            "link": "user"
+            "name": "ユーザ追加",
+            "link": "user-add"
           },
-          {
-            "name": "表单验证",
-            "link": "ng-form"
-          },
-          {
-            "name": "input",
-            "link": "input"
-          },
-          {
-            "name": "图标",
-            "link": "icon"
-          },
-          {
-            "name": "省级联动",
-            "link": "citys"
-          }
         ]
       },
       {
-        "name": "charts",
+        "name": "契約管理",
         "icon": "fa-line-chart",
         "children": [
           {
-            "name": "charts",
-            "link": "charts"
+            "name": "契約検索",
+            "link": "contract-search"
           }
         ]
       },
       {
-        "name": "tree",
+        "name": "システム設定",
         "icon": "fa-tree",
         "children": [
           {
-            "name": "tree",
-            "link": "tree"
+            "name": "権限設定",
+            "link": "authority-setting"
+          },
+          {
+            "name": "パスワード変更",
+            "link": "changepassword"
           }
         ]
       },
-      {
-        "name": "上传",
-        "icon": "fa-upload",
-        "children": [
-          {
-            "name": "上传",
-            "link": "upload"
-          }
-        ]
-      }
     ];
   }
 

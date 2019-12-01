@@ -171,13 +171,13 @@ button {
 
 /*菜单栏*/
 .menu {
-  padding-top: 100px;
-  width: 170px;
+  padding-top: 80px;
+  width: 180px;
   position: fixed;
   z-index: 800;
   height: 100%;
-  color: #FFFFFF;
-  background-color: #323a57;
+  color: #323a57;
+  background-color: #DBDBDB;
 }
 
 /*菜单激活颜色*/
@@ -202,42 +202,50 @@ body .ui-accordion .ui-accordion-header .fa {
 .ui-accordion .ui-accordion-content {
   padding: 0 !important;
   border: 0 !important;
-  background-color: #1f283d !important;
+  // background-color: #1f283d !important;
+  background-color: #DBDBDB !important;
 }
 
 .ui-accordion .ui-accordion-content a {
   display: block;
-  width: 170px;
+  width: 180px;
   text-align: center;
   height: 46px;
   line-height: 46px;
-  color: #FFFFFF;
+  // color: #FFFFFF;
+  color: #1C1C1C;
 }
 
 .ui-accordion .ui-accordion-content a:hover {
-  color: #FFFFFF !important;
+  // color: #FFFFFF !important;
+  color: #1C1C1C !important;
   background-color: rgba(0, 0, 0, .5);
 }
 
 body .ui-accordion .ui-accordion-header {
   background-color: #323a57;
-  color: #FFFFFF;
+  // color: #FFFFFF;
+  color: #1C1C1C;
 }
 
 body .ui-accordion .ui-accordion-header:hover {
   background-color: rgba(0, 0, 0, .5) !important;
-  color: #FFFFFF !important;
+  // color: #FFFFFF !important;
+  color: #1C1C1C !important;
 }
 
 body .ui-accordion .ui-accordion-header:hover a {
-  color: #FFFFFF !important;
+  // color: #FFFFFF !important;
+  color: #1C1C1C !important;
 }
 
 body .ui-accordion .ui-accordion-header a {
-  color: #FFFFFF;
+  // color: #FFFFFF;
+  color: #1C1C1C;
 }
 
 body .ui-accordion .ui-accordion-header.ui-state-active {
+  // background-color: #323a57;
   background-color: #323a57;
   color: #FFFFFF;
 }
@@ -432,4 +440,8 @@ tr:hover {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+/*contents*/
+#content .row div.col-xs-12.col-sm-4.col-md-4.col-lg-8 {
+  overflow: hidden;
 }

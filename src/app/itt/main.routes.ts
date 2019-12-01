@@ -5,13 +5,13 @@ export const workspaceRoutes = [
     path: '',
     component: WorkspaceComponent,
     children: [
+      // {
+      //   path: '', redirectTo: 'user', pathMatch: 'full'
+      // },
       {
-        path: '', redirectTo: 'user', pathMatch: 'full'
-      },
-      {
-        path: 'user',
+        path: 'user-search',
         loadChildren: '../itt/user-search/user-search.module#UserSearchModule',
-        title: '普通表格'
+        title: 'ユーザ検索'
       },
       {
         path: '**',

@@ -1,121 +1,97 @@
-            <div style=" width: 1158px; height: 30px">
-                <div>
-                    <span id=ctl00_lbltitle class=title>ユーザー一覧</span>
-                </div>
-            </div>
-            <br>
-            <br>
-            <div style="TEXT-ALIGN: left; width: 1158px">
-                <div class=tbTitile>
-                    <span id=ctl00_mainContent_SearchText class=inputlbl>検索条件</span>
-                </div>
-                <div class=tbContent>
-                        <span id=ctl00_mainContent_lblUserCode class=inputlbl>ユーザーID</span><br>
-                        <input id=ctl00_mainContent_txtUserCode class=inputText name="userId" maxLength=10 value="">
-                        <span id=ctl00_mainContent_lblUserName class=inputlbl>ユーザー名</span><br>
-                                    <input id=ctl00_mainContent_txtUserName class=inputText name="userName" maxLength=20 value="">
-                    <table style="width: 100%" cellSpacing=0 cellPadding=0>
-                        <tbody>
-                            <tr>
-                                <td style="width: 170px">
-                                    
-                                </td>
-                                <td style="width: 170px">
-                                    
-                                </td>
-                                <td style="width: 170px">
-                                    <span id=ctl00_mainContent_lblAcessGrp class=inputlbl>権限</span><br>
-                                    <select id=ctl00_mainContent_ddlAcessGrp class=ddlBlack name="userRoot" id="userRoot">
-                                        
-                                    </select>
-                                    <input type="hidden" value="" id="root"/>
-                                </td>
-                                <td><br>
-                                <span style="width: 133px; DISPLAY: inline-block" class=chkBox>
-                                    
-                                    <label for=ctl00_mainContent_chkVisible>削除フラグ含む</label>
-                                    <input id=delFlagHidden name=delFlag type=hidden value=""/>
-                                </span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div style="TEXT-ALIGN: right; width: 100%" class=btnContent>
-                    <a href="javascript:void(0)" class="btn" (click)="search()">検索</a>
-                    <a href="javascript:void(0)" class="btn">追加</a>
-                </div>
-                <div style="height: 340px" class=gvContent>
-                    <p-table #dt
-                            [value]="dataTableMate.ResultData"
-                            [(first)]="dataTableMate.first"
-                            [columns]="cols"
-                            [rowHover]="true"
-                            [responsive]="true"
-                            [autoLayout]="true"
-                            selectionMode="single"
-                            [(selection)]="selected"
-                            [paginator]="true"
-                            [pageLinks]="5"
-                            [rowsPerPageOptions]="[10,20,50,100]"
-                            [rows]="10"
-                            [totalRecords]="dataTableMate.totalRecords">
-                            <ng-template pTemplate="header">
-                                <tr [ngClass]="text-center">
-                                    <th [ngStyle]="{'width': '4%'}">
-                                        header1
-                                    </th>
-                                    <th [ngStyle]="{'width': '30%'}">
-                                        header1
-                                    </th>
-                                    <th [ngStyle]="{'width': '5%'}">
-                                        header1
-                                    </th>
-                                    <th [ngStyle]="{'width': '5%'}">
-                                        header1
-                                    </th>
-                                    <th [ngStyle]="{'width': '6%'}">
-                                        header1
-                                    </th>
-                                    <th [ngStyle]="{'width': '6%'}">
-                                        header1
-                                    </th>
-                                    <th [ngStyle]="{'width': '5%'}">
-                                        header1
-                                    </th>
-                                </tr>
-                            </ng-template>
-                            
-                            <ng-template pTemplate="body" let-rowData let-columns="columns"
-                                let-rowIndex="rowIndex" let-index="rowIndex">
-                                <tr [pReorderableRow]="index" tr [pSelectableRow]="rowData">
-                                    <td [ngStyle]="{'text-align':'center'}">
-                                        {{rowData.userName}}
-                                    </td>
-                                    <td>
-                                        {{rowData.telNumber}}
-                                    </td>
-                                    <td>
-                                        {{rowData.mailAddress}}
-                                    </td>
-                                    <td>
-                                        {{rowData.authorityCd}}
-                                    </td>
-                                    <td>
-                                        {{rowData.memo}}
-                                    </td>
-                                    <td>
-                                        {{rowData.delFlg}}
-                                    </td>
-                                    <td>
-                                        <i class="fa fa-bars" pReorderableRowHandle></i>
-                                        <i class="fa fa-caret-up fa-1.5x" style="padding-left: 10px;"></i>
-                                        <i class="fa fa-caret-down fa-1.5x" style="padding-left: 10px;"></i>
-                                    </td>
-                                </tr>
-                            </ng-template>
-                        </p-table>
-                </div>
-                <!-- 画面遷移用ユーザーID -->
-                <input id="updateUserId" name="updateUserId"  type=hidden />
-            </div>
+<div id="content">
+  <div class="title">
+    ユーザ一覧
+  </div>
+  <div>
+    <p-panel header="検索条件" [toggleable]="true">
+        <div class="row">
+          <div class="input">
+            <span class="ui-float-label">
+              <input id="float-input" type="text" size="30" pInputText>
+              <label for="float-input">ユーザID</label>
+            </span>
+          </div>
+          <div class="input">
+            <span class="ui-float-label">
+              <input id="float-input" type="text" size="30" pInputText>
+              <label for="float-input">ユーザー名</label>
+            </span>
+          </div>
+          <div class="input">
+            <p-dropdown name="noticeTypes" [options]="authority" [(ngModel)]="selectedCity2" optionLabel="name">
+            </p-dropdown>
+          </div>
+          <div class="input">
+            <p-checkbox [(ngModel)]="value" binary="true"></p-checkbox>
+            <label>削除データ含む</label>
+          </div>
+          <div style="TEXT-ALIGN: right; width: 95%" class="input">
+            <button pButton type="button" label="検索" (click)="search()"></button>
+          </div>
+        </div>
+    </p-panel>
+
+    
+    <div style="margin-top:20px" class=gvContent>
+      <p-table #dt [value]="dataTableMate.ResultData" [(first)]="dataTableMate.first" [columns]="cols" [rowHover]="true"
+        [responsive]="true" [autoLayout]="true" selectionMode="single" [(selection)]="selected" [paginator]="true"
+        [pageLinks]="5" [rowsPerPageOptions]="[10,20,50,100]" [rows]="10" [totalRecords]="dataTableMate.totalRecords">
+        <ng-template pTemplate="header">
+          <tr [ngClass]="text-center">
+            <th [ngStyle]="{'width': '4%'}">
+              header1
+            </th>
+            <th [ngStyle]="{'width': '30%'}">
+              header1
+            </th>
+            <th [ngStyle]="{'width': '5%'}">
+              header1
+            </th>
+            <th [ngStyle]="{'width': '5%'}">
+              header1
+            </th>
+            <th [ngStyle]="{'width': '6%'}">
+              header1
+            </th>
+            <th [ngStyle]="{'width': '6%'}">
+              header1
+            </th>
+            <th [ngStyle]="{'width': '5%'}">
+              header1
+            </th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-rowData let-columns="columns" let-rowIndex="rowIndex" let-index="rowIndex">
+          <tr [pReorderableRow]="index" tr [pSelectableRow]="rowData">
+            <td [ngStyle]="{'text-align':'center'}">
+              {{rowData.userName}}
+            </td>
+            <td>
+              {{rowData.telNumber}}
+            </td>
+            <td>
+              {{rowData.mailAddress}}
+            </td>
+            <td>
+              {{rowData.authorityCd}}
+            </td>
+            <td>
+              {{rowData.memo}}
+            </td>
+            <td>
+              {{rowData.delFlg}}
+            </td>
+            <td>
+              <i class="fa fa-bars" pReorderableRowHandle></i>
+              <i class="fa fa-caret-up fa-1.5x" style="padding-left: 10px;"></i>
+              <i class="fa fa-caret-down fa-1.5x" style="padding-left: 10px;"></i>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+    <!-- 画面遷移用ユーザーID -->
+    <input id="updateUserId" name="updateUserId" type=hidden />
+  </div>
+</div>
