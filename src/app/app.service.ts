@@ -55,8 +55,7 @@ export class AppHttp {
   }
 
   public getRequestURL(domain: string, action: string) : string {
-    // let url = config.webApiDomains[domain].baseUrl;
-    let url = 'http://localhost:8080';
+    let url = config.webApiDomains[domain].baseUrl;
     return `${url}${action}` ;
   }
 
@@ -66,8 +65,7 @@ export class AppHttp {
   }
 
   private requestDispatch(method: string, domain: string, action: string, options: RequestOptions, params?: any): Promise<any> {
-    // let url = config.webApiDomains[domain].baseUrl;
-    let url = 'http://localhost:8080';
+    let url = config.webApiDomains[domain].baseUrl;
     let prms: Promise<any>;
     switch (method.toUpperCase()) {
       case 'GET':

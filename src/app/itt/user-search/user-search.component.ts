@@ -20,7 +20,7 @@ export class UserSearchComponent implements OnInit {
   authority: Authority[];
   selectedCity2: Authority;
   domains: any[];
-  dataTableMate: DataTableMate = new DataTableMate('http://localhost:8080', '/UserSearch', this.http);
+  dataTableMate: DataTableMate = new DataTableMate('itt', '/UserSearch', this.http);
   filterInfo: any = {};
 
   constructor(
